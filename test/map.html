@@ -1,14 +1,90 @@
 <body>
-  <div>
-    <svg style="width: 100%; height: 100%;">
+  <div><svg style="width: 100%; height: 100%;">
       <g>
         <g class="lines">
-          <path d="M135,380L305,380C380,380,380,380,455,305L619.142135623731,140.85786437626905" id="Town" stroke="#ffd300" fill="none" stroke-width="60" class="line"></path>
+          <path
+            d="M858,585L858,571L859,566L861,561L866,557L873,555L881,555L905,555L1002,555L1002,555L1077,555L1116,555L1151,555L1161,556L1169,559L1174,563L1177,569L1179,575L1179,586L1179,628L1179,659L1179,720L1179,736L1178,744L1177,750L1175,755L1171,759L1166,762L1158,764L1116,764L1045,764L999,764L928,764L882,763L874,763L867,761L863,758L860,753L859,748L858,720L858,667L858,625L858,585"
+            id="Linex" stroke="#FF0000" fill="none" stroke-width="1.4860681114549152" class="line"></path>
         </g>
-        <g class="interchanges"></g>
-        <g class="stations"></g>
-        <g class="labels"></g>
+        <g class="interchanges">
+          <circle name="鼓楼大街" cx="1002" r="3" cy="555" stroke-width="0.7430340557274576" fill="#ffffff" stroke="#000000"
+            class="interchange" style="cursor: pointer;"></circle>
+          <circle name="雍和宫" cx="1116" r="3" cy="555" stroke-width="0.7430340557274576" fill="#ffffff" stroke="#000000"
+            class="interchange" style="cursor: pointer;"></circle>
+          <circle name="东直门" cx="1179" r="3" cy="586" stroke-width="0.7430340557274576" fill="#ffffff" stroke="#000000"
+            class="interchange" style="cursor: pointer;"></circle>
+          <circle name="朝阳门" cx="1179" r="3" cy="659" stroke-width="0.7430340557274576" fill="#ffffff" stroke="#000000"
+            class="interchange" style="cursor: pointer;"></circle>
+          <circle name="建国门" cx="1179" r="3" cy="720" stroke-width="0.7430340557274576" fill="#ffffff" stroke="#000000"
+            class="interchange" style="cursor: pointer;"></circle>
+          <circle name="崇文门" cx="1116" r="3" cy="764" stroke-width="0.7430340557274576" fill="#ffffff" stroke="#000000"
+            class="interchange" style="cursor: pointer;"></circle>
+          <circle name="宣武门" cx="928" r="3" cy="764" stroke-width="0.7430340557274576" fill="#ffffff" stroke="#000000"
+            class="interchange" style="cursor: pointer;"></circle>
+          <circle name="复兴门" cx="858" r="3" cy="720" stroke-width="0.7430340557274576" fill="#ffffff" stroke="#000000"
+            class="interchange" style="cursor: pointer;"></circle>
+          <circle name="车公庄" cx="858" r="3" cy="625" stroke-width="0.7430340557274576" fill="#ffffff" stroke="#000000"
+            class="interchange" style="cursor: pointer;"></circle>
+          <circle name="西直门" cx="858" r="3" cy="585" stroke-width="0.7430340557274576" fill="#ffffff" stroke="#000000"
+            class="interchange" style="cursor: pointer;"></circle>
+        </g>
+        <g class="stations">
+          <circle name="积水潭" cx="905" cy="555" style="fill:#FFF;stroke:#000;" r="1" stroke-width="0.5" id="积水潭"
+            class="station"></circle>
+          <circle name="安定门" cx="1077" cy="555" style="fill:#FFF;stroke:#000;" r="1" stroke-width="0.5" id="安定门"
+            class="station"></circle>
+          <circle name="东四十条" cx="1179" cy="628" style="fill:#FFF;stroke:#000;" r="1" stroke-width="0.5" id="东四十条"
+            class="station"></circle>
+          <circle name="北京站" cx="1171" cy="759" style="fill:#FFF;stroke:#000;" r="1" stroke-width="0.5" id="北京站"
+            class="station"></circle>
+          <circle name="前门" cx="1045" cy="764" style="fill:#FFF;stroke:#000;" r="1" stroke-width="0.5" id="前门"
+            class="station"></circle>
+          <circle name="和平门" cx="999" cy="764" style="fill:#FFF;stroke:#000;" r="1" stroke-width="0.5" id="和平门"
+            class="station"></circle>
+          <circle name="长椿街" cx="863" cy="758" style="fill:#FFF;stroke:#000;" r="1" stroke-width="0.5" id="长椿街"
+            class="station"></circle>
+          <circle name="阜成门" cx="858" cy="667" style="fill:#FFF;stroke:#000;" r="1" stroke-width="0.5" id="阜成门"
+            class="station"></circle>
+        </g>
+        <g class="labels">
+          <g id="积水潭" class="label"><text fill="#10137E" dy="-2" x="905" y="553" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">积水潭</text></g>
+          <g id="鼓楼大街" class="label"><text fill="#10137E" dy="-2" x="1002" y="553" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">鼓楼大街</text></g>
+          <g id="安定门" class="label"><text fill="#10137E" dy="-2" x="1077" y="553" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">安定门</text></g>
+          <g id="雍和宫" class="label"><text fill="#10137E" dy="-2" x="1116" y="553" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">雍
+              和宫</text></g>
+          <g id="东直门" class="label"><text fill="#10137E" dy="-2" x="1179" y="584" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">东直门</text></g>
+          <g id="东四十条" class="label"><text fill="#10137E" dy="-2" x="1179" y="626" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">东四十条</text></g>
+          <g id="朝阳门" class="label"><text fill="#10137E" dy="-2" x="1179" y="657" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">朝阳门</text></g>
+          <g id="建国门" class="label"><text fill="#10137E" dy="-2" x="1179" y="718" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">建国门</text></g>
+          <g id="北京站" class="label"><text fill="#10137E" dy="-2" x="1171" y="757" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">北京站</text></g>
+          <g id="崇文门" class="label"><text fill="#10137E" dy="-2" x="1116" y="762" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">崇文门</text></g>
+          <g id="前门" class="label"><text fill="#10137E" dy="-2" x="1045" y="762" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">前门</text></g>
+          <g id="和平门" class="label"><text fill="#10137E" dy="-2" x="999" y="762" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">和平门</text></g>
+          <g id="宣武门" class="label"><text fill="#10137E" dy="-2" x="928" y="762" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">宣武门</text></g>
+          <g id="长椿街" class="label"><text fill="#10137E" dy="-2" x="863" y="756" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">长椿街</text></g>
+          <g id="复兴门" class="label"><text fill="#10137E" dy="-2" x="858" y="718" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">复兴门</text></g>
+          <g id="阜成门" class="label"><text fill="#10137E" dy="-2" x="858" y="665" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">阜成门</text></g>
+          <g id="车公庄" class="label"><text fill="#10137E" dy="-2" x="858" y="623" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">车公庄</text></g>
+          <g id="西直门" class="label"><text fill="#10137E" dy="-2" x="858" y="583" text-anchor="start"
+              style="display: block; text-decoration: none; font-size: 12px;">西直门</text></g>
+        </g>
       </g>
-    </svg>
-  </div>
+    </svg></div>
 </body>

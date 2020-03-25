@@ -16,16 +16,19 @@ tape('map(selection) produces the expected result', function(test) {
   global.SVGElement = function() {};
 
   var bodyExpected = new jsdom.JSDOM(file('map.html')).window.document.body;
+  
   var data = JSON.parse(
     fs.readFileSync(path.join(__dirname, 'map.json'), 'utf8')
   );
 
+  
   d3
-    .select(bodyActual)
-    .select('div')
-    .datum(data)
-    .call(d3.tubeMap());
-
+  .select(bodyActual)
+  .select('div')
+  .datum(data)
+  .call(d3.tubeMap());
+  
+  console.log('data', bodyActual.outerHTML);
   test.equal(bodyActual.outerHTML, bodyExpected.outerHTML);
   test.end();
 });
