@@ -170,25 +170,21 @@ export default function() {
       .selectAll('path')
       .data(_data.stations.interchanges())
       .enter()
-      .append('g')
-      .attr('id', function(d) {
+      .append('circle')
+      .attr('name', function(d) {
         return d.name;
+      })
+      .attr('cx', function(d) {
+        return d.p.split(' ')[0];
+      })
+      .attr('r', 3)
+      .attr('cy', function(d) {
+        return d.p.split(' ')[1];
       })
       .on('click', function() {
         var label = d3.select(this);
-        var name = label.attr('id');
+        var name = label.attr('name');
         listeners.call('click', this, name);
-      })
-      .append('path')
-      .attr('d', interchange(lineWidth))
-      .attr('transform', function(d) {
-        return (
-          'translate(' +
-          xScale(d.x + d.marker[0].shiftX * lineWidthMultiplier) +
-          ',' +
-          yScale(d.y + d.marker[0].shiftY * lineWidthMultiplier) +
-          ')'
-        );
       })
       .attr('stroke-width', lineWidth / 2)
       .attr('fill', function(d) {
@@ -208,30 +204,29 @@ export default function() {
       .selectAll('path')
       .data(_data.stations.normalStations())
       .enter()
-      .append('g')
-      .attr('id', function(d) {
+      .append('circle')
+      .attr('name', function(d) {
         return d.name;
       })
+      .attr('cx', function(d) {
+        return d.x;
+      })
+      .attr('cy', function(d) {
+        return d.y;
+      })
+      .attr('style', 'fill:#FFF;stroke:#000;')
+      .attr('r', 1)
+      // .attr('stroke-width', 1) style="fill:#f9f;stroke:gray;"
+      // .attr('stroke', '#000')
       .on('click', function() {
         var label = d3.select(this);
         var name = label.attr('id');
         listeners.call('click', this, name);
       })
-      .append('path')
-      .attr('d', function(d) {
-        return station(
-          d,
-          xScale,
-          yScale,
-          lineWidthMultiplier,
-          lineWidthTickRatio
-        );
-      })
       .attr('stroke', function(d) {
         return d.color;
       })
-      .attr('stroke-width', lineWidth / lineWidthTickRatio)
-      .attr('fill', 'none')
+      .attr('stroke-width', 0.5)
       .attr('class', function(d) {
         return d.line;
       })
@@ -263,12 +258,12 @@ export default function() {
         return d.label;
       })
       .attr('fill', '#10137E')
-      .attr('dy', 0)
+      .attr('dy', -2)
       .attr('x', function(d) {
-        return xScale(d.x + d.labelShiftX) + textPos(d).pos[0];
+        return d.p.split(' ')[0];
       })
       .attr('y', function(d) {
-        return yScale(d.y + d.labelShiftY) - textPos(d).pos[1];
+        return parseInt(d.p.split(' ')[1]) - 2;
       })
       .attr('text-anchor', function(d) {
         return textPos(d).textAnchor;
@@ -279,15 +274,8 @@ export default function() {
       .style('text-decoration', function(d) {
         return d.closed ? 'line-through' : 'none';
       })
-      .style('font-size', 1.96 * lineWidth + 'px')
+      .style('font-size', '12px')
       .style('-webkit-user-select', 'none')
-      .attr('class', function(d) {
-        return d.marker
-          .map(function(marker) {
-            return marker.line;
-          })
-          .join(' ');
-      })
       .classed('highlighted', function(d) {
         return d.visited;
       })
@@ -480,22 +468,22 @@ export default function() {
       var x = text.attr('x');
       var dy = parseFloat(text.attr('dy'));
 
-      text
-        .text(null)
-        .append('tspan')
-        .attr('x', x)
-        .attr('y', y)
-        .attr('dy', dy + 'em')
-        .attr('dominant-baseline', baseline)
-        .text(lines[0]);
+      // text
+      //   .text(null)
+      //   .append('tspan')
+      //   .attr('x', x)
+      //   .attr('y', y)
+      //   .attr('dy', dy + 'em')
+      //   .attr('dominant-baseline', baseline)
+      //   .text(lines[0]);
 
       for (var lineNum = 1; lineNum < lines.length; lineNum++) {
         text
-          .append('tspan')
-          .attr('x', x)
-          .attr('y', y)
-          .attr('dy', lineNum * 1.1 + dy + 'em')
-          .attr('dominant-baseline', baseline)
+          // .append('tspan')
+          // .attr('x', x)
+          // .attr('y', y)
+          // .attr('dy', lineNum * 1.1 + dy + 'em')
+          // .attr('dominant-baseline', baseline)
           .text(lines[lineNum]);
       }
     });

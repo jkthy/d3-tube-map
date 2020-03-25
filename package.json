@@ -25,7 +25,7 @@
     "url": "https://github.com/johnwalley/d3-tube-map.git"
   },
   "scripts": {
-    "pretest": "rm -rf dist && mkdir dist && rollup -c --banner \"$(preamble)\"",
+    "pretest": "if exist dist (rd /s/q dist && mkdir dist && rollup -c --banner \"$(preamble)\") else (echo not find file) && mkdir dist && rollup -c --banner \"$(preamble)\"",
     "test": "tape 'test/**/*-test.js' && eslint index.js src",
     "prepublishOnly": "npm run test && uglifyjs -b beautify=false,preamble=\"'$(preamble)'\" dist/d3-tube-map.js -c -m -o dist/d3-tube-map.min.js",
     "postpublish": "zip -j dist/d3-tube-map.zip -- LICENSE README.md dist/d3-tube-map.js dist/d3-tube-map.min.js"

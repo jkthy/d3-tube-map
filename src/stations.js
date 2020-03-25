@@ -18,9 +18,8 @@ Stations.prototype.toArray = function() {
 
 Stations.prototype.interchanges = function() {
   var interchangeStations = this.toArray();
-
   return interchangeStations.filter(function(station) {
-    return station.marker[0].marker === 'interchange';
+    return station.marker === '1';
   });
 };
 
@@ -28,26 +27,19 @@ Stations.prototype.normalStations = function() {
   var stations = this.toArray();
 
   var stationStations = stations.filter(function(station) {
-    return station.marker[0].marker !== 'interchange';
+    return station.marker !== '1';
   });
 
   var stationMarkers = [];
 
   stationStations.forEach(function(station) {
-    station.marker.forEach(function(marker) {
-      stationMarkers.push({
-        name: station.name,
-        line: marker.line,
-        x: station.x,
-        y: station.y,
-        color: marker.color,
-        shiftX: marker.shiftX,
-        shiftY: marker.shiftY,
-        labelPos: station.labelPos,
-      });
+    stationMarkers.push({
+      name: station.name,
+      x: station.p.split(' ')[0],
+      y: station.p.split(' ')[1],
+      labelPos: station.labelPos,
     });
   });
-
   return stationMarkers;
 };
 
